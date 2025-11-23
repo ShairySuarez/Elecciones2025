@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Marmota</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/732/732212.png" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Tu CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- jQuery y Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<!-- Tabs -->
+<section id="tabs">
+	<div class="container">
+		<h6 class="section-title h1 text-center">Elecciones Marmota 2025</h6>
+		<div class="row">
+			<div class="col-12">
+				<nav class="d-flex justify-content-center">
+					<div class="nav nav-tabs nav-fill w-50" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab">Lista 5</a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab">Lista 12</a>
+						<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab">Lista 22</a>
+						<a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab">Lista 51</a>
+					</div>
+				</nav>
+
+				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+					<div class="tab-pane fade" id="nav-home" role="tabpanel">
+						<!-- 5 -->
+						<br>
+						<h4>***POR UN FUTURO EN EL QUE NO ESTA JESUS***</h4>
+						<br>
+						<img data-src="images/alan_1.jpg" class="img-fluid tab-img">
+						<br>
+						<h4>"Boten por mi y cierren el hociquito"</h4>
+						<img data-src="images/alan_2.jpg" class="img-fluid tab-img">
+					</div>
+
+					<div class="tab-pane fade" id="nav-profile" role="tabpanel">
+						<!-- 12 -->
+						<br>
+						<h4>***LA LIBERTAD DE PUTEAR ES UN DERECHO***</h4>
+						<br>
+						<img data-src="images/jeff_1.jpg" class="img-fluid tab-img" alt="Descripción de la imagen">
+						<h4>"Voten por mi ¡¡Chuchas!!"</h4>
+						<img data-src="images/jeff_2.jpg" class="img-fluid tab-img">
+					</div>
+
+					<div class="tab-pane fade" id="nav-contact" role="tabpanel">
+						<!-- 22 -->
+						<br>
+						<h4>***HARE DE ESTE GRUPO, UN GRUPO BIEN ARRECHO***</h4>
+						<br>
+					</div>
+
+					<div class="tab-pane fade" id="nav-about" role="tabpanel">
+						<!-- 51 -->
+						<br>
+						<h4>***UN GRUPO UNIDO ES AQUEL QUE JUEGA MINECRAFT***</h4>
+						<br>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- SCRIPT: carga las imágenes solo al abrir el tab -->
+	<script>
+		// Cargar imagen al activar el tab
+		$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+			var target = $(e.target).attr("href"); // Tab activo
+
+			$(target).find("img[data-src]").each(function () {
+				$(this).attr("src", $(this).data("src"));
+			});
+		});
+
+		// Quitar imagen al desactivar el tab (liberar memoria)
+		$('a[data-toggle="tab"]').on('hidden.bs.tab', function (e) {
+			var target = $(e.target).attr("href");
+
+			$(target).find("img").each(function () {
+				$(this).attr("src", ""); // quitar imagen del DOM
+			});
+		});
+	</script>
+</section>
+</html>
